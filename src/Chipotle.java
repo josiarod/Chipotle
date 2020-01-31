@@ -223,9 +223,9 @@ public class Chipotle {
         //
         System.out.printf("This order has %d white rice, %d brown rice, %d chicken,\n" +
                         "%d steak, %d carnitas, %d chorizo, %d sofritas,\n" +
-                        "%d veggies(as meat option), %d black beans %d pinto beans,\n" +
+                        "%d veggies(as meat option), %d black beans, %d pinto beans,\n" +
                         "%d mild salsa, %d med salsa, %d hot salsa, %d fajitas, \n" +
-                        "%d lettuce, %d cheese, %d queso, %d guac %d sour cream, and the sum is $%d",
+                        "%d lettuce, %d cheese, %d queso, %d guac, %d sour cream, and the sum is $%d",
                 whiteRice, brownRice, chicken, steak , carnidas, chorizo , sofritas , veggiMeat, black,pinto, mild , medium , hot , fajitaveggies, lettuce , cheeseC, quesoC, guacC , sourCreamC, totalPrice
         );
 
