@@ -8,9 +8,14 @@ public class Chipotle {
 
     }
 
+
+
     public static void chipotleBuilder(){
+
+        int totalPrice = 0;
         Random rand = new Random();
         int riceRand, meatRand,beansRand,veggiesRand,cheeseRand,quesoRand,sourCreamRand,salsaRand,guacRand;
+
 
         String[] rice = {"white rice","brown rice","no rice","all rice"};
         String[] meat = {"chicken","steak","carnidas","chorizo","sofritas","veggies meat","no meat","all meats"};
@@ -22,10 +27,10 @@ public class Chipotle {
         String[] queso = {"queso","no"};
         String[] sourCream = {"sour cream", "no"};
 
-
+        ArrayList<String> chipotles1 = new ArrayList<String>();
         for(int i = 1; i < 26; i++) {
             ArrayList<String> chipotles = new ArrayList<String>();
-
+           chipotles1 = chipotles;
             double price = 3.00;
 
             riceRand = rand.nextInt(4);
@@ -111,8 +116,108 @@ public class Chipotle {
 
             System.out.println("Burrito " + i + ": " +  finalChipotle + "     "+ "$"+ price);
             System.out.println();
+            totalPrice += price;
+        }
+
+
+        int whiteRice = 0, brownRice = 0, chicken = 0,steak = 0, carnidas = 0, chorizo = 0, sofritas = 0, veggiMeat = 0,pinto = 0, black = 0,mild = 0, medium = 0, hot = 0,lettuce = 0, fajitaveggies = 0,cheeseC = 0,guacC = 0,quesoC = 0, sourCreamC = 0;
+        for(String s : chipotles1){
+
+            switch (s) {
+                case "white rice":
+                    whiteRice++;
+                    break;
+                case "brown rice":
+                    brownRice++;
+                    break;
+                case "chicken":
+                    chicken++;
+                    break;
+                case "steak":
+                    chicken++;
+                    break;
+                case "carnidas":
+                    carnidas++;
+                    break;
+                case "chorizo":
+                    chorizo++;
+                    break;
+                case "sofritas":
+                    sofritas++;
+                    break;
+                case "veggies meat":
+                    veggiMeat++;
+                    break;
+                case "pinto beans":
+                    pinto++;
+                    break;
+                case "black beans":
+                    black++;
+                    break;
+                case "mild salsa":
+                    mild++;
+                    break;
+                case "medium salsa":
+                    medium++;
+                    break;
+                case "hot salsa":
+                    hot++;
+                    break;
+                case "lettuce":
+                    lettuce++;
+                    break;
+                case "fajita veggies":
+                    fajitaveggies++;
+                    break;
+                case "cheese":
+                    cheeseC++;
+                    break;
+                case "queso":
+                    quesoC++;
+                    break;
+                case "guac":
+                    guacC++;
+                    break;
+                case "sour cream":
+                    sourCreamC++;
+                    break;
+                case "all rice":
+                    whiteRice++;
+                    brownRice++;
+                    break;
+                case "all meats":
+                    chicken++;
+                    steak++;
+                    carnidas++;
+                    chorizo++;
+                    sofritas++;
+                    veggiMeat++;
+                    break;
+                case "all beans":
+                    pinto++;
+                    black++;
+                    break;
+                case "all salsa":
+                    mild++;
+                    medium++;
+                    hot++;
+                    break;
+                case "all veggies":
+                    lettuce++;
+                    fajitaveggies++;
+                    break;
+            }
 
         }
+        //
+        System.out.printf("This order has %d white rice, %d brown rice, %d chicken,\n" +
+                        "%d steak, %d carnitas, %d chorizo, %d sofritas,\n" +
+                        "%d veggies(as meat option), %d black beans %d pinto beans,\n" +
+                        "%d mild salsa, %d med salsa, %d hot salsa, %d fajitas, \n" +
+                        "%d lettuce, %d cheese, %d queso, %d guac %d sour cream, and the sum is $%d",
+                whiteRice, brownRice, chicken, steak , carnidas, chorizo , sofritas , veggiMeat, black,pinto, mild , medium , hot , fajitaveggies, lettuce , cheeseC, quesoC, guacC , sourCreamC, totalPrice
+        );
+
 
     }
 }
