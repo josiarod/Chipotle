@@ -12,6 +12,7 @@ public class Chipotle {
 
     public static void chipotleBuilder(){
 
+
         int totalPrice = 0;
         Random rand = new Random();
         int riceRand, meatRand,beansRand,veggiesRand,cheeseRand,quesoRand,sourCreamRand,salsaRand,guacRand;
@@ -30,11 +31,12 @@ public class Chipotle {
         ArrayList<String> chipotles1 = new ArrayList<String>();
         for(int i = 1; i < 26; i++) {
             ArrayList<String> chipotles = new ArrayList<String>();
-           chipotles1 = chipotles;
+
             double price = 3.00;
 
             riceRand = rand.nextInt(4);
             chipotles.add(rice[riceRand]);
+            chipotles1.add(rice[riceRand]);
             if (rice[riceRand].equals("all rice")) {
                 price += 1.5;
             } else if (!rice[riceRand].equals("no rice")) {
@@ -44,6 +46,7 @@ public class Chipotle {
 
             meatRand = rand.nextInt(8);
             chipotles.add(meat[meatRand]);
+            chipotles1.add(meat[meatRand]);
             if (meat[meatRand].equals("all meats")) {
                 price += 3.00;
             } else if (!meat[meatRand].equals("no meat")) {
@@ -53,6 +56,7 @@ public class Chipotle {
 
             beansRand = rand.nextInt(4);
             chipotles.add(beans[beansRand]);
+            chipotles1.add(beans[beansRand]);
             if (beans[beansRand].equals("all beans")) {
                 price += 1.5;
             } else if (!beans[beansRand].equals("no beans")) {
@@ -62,6 +66,7 @@ public class Chipotle {
 
             salsaRand = rand.nextInt(5);
             chipotles.add(salsa[salsaRand]);
+            chipotles1.add(salsa[salsaRand]);
             if (salsa[salsaRand].equals("all salsa")) {
                 price += 1.5;
             } else if (!salsa[salsaRand].equals("no salsa")) {
@@ -71,6 +76,7 @@ public class Chipotle {
 
             veggiesRand = rand.nextInt(4);
             chipotles.add(veggies[veggiesRand]);
+            chipotles1.add(veggies[veggiesRand]);
             if (veggies[veggiesRand].equals("all veggies")) {
                 price += 1.00;
             } else if (!veggies[veggiesRand].equals("no veggies")) {
@@ -81,24 +87,28 @@ public class Chipotle {
             cheeseRand = rand.nextInt(2);
             if (cheese[cheeseRand].equals("cheese")) {
                 chipotles.add(cheese[cheeseRand]);
+                chipotles1.add(cheese[cheeseRand]);
                 price += 0.50;
             }
 
             quesoRand = rand.nextInt(2);
             if (queso[quesoRand].equals("queso")) {
                 chipotles.add(queso[quesoRand]);
+                chipotles1.add(queso[quesoRand]);
                 price += 0.50;
             }
 
             guacRand = rand.nextInt(2);
             if (guac[guacRand].equals("guac")) {
                 chipotles.add(guac[guacRand]);
+                chipotles1.add(guac[guacRand]);
                 price += 0.50;
             }
 
             sourCreamRand = rand.nextInt(2);
             if (sourCream[sourCreamRand].equals("sour cream")) {
                 chipotles.add(sourCream[sourCreamRand]);
+                chipotles1.add(sourCream[sourCreamRand]);
                 price += 0.50;
             }
 
@@ -117,11 +127,12 @@ public class Chipotle {
             System.out.println("Burrito " + i + ": " +  finalChipotle + "     "+ "$"+ price);
             System.out.println();
             totalPrice += price;
+
         }
 
 
         int whiteRice = 0, brownRice = 0, chicken = 0,steak = 0, carnidas = 0, chorizo = 0, sofritas = 0, veggiMeat = 0,pinto = 0, black = 0,mild = 0, medium = 0, hot = 0,lettuce = 0, fajitaveggies = 0,cheeseC = 0,guacC = 0,quesoC = 0, sourCreamC = 0;
-        for(String s : chipotles1){
+        for(String s: chipotles1){
 
             switch (s) {
                 case "white rice":
