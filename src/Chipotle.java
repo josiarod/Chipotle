@@ -4,6 +4,11 @@ import java.util.Random;
 public class Chipotle {
     public static void main(String[] args) {
 
+      chipotleBuilder();
+
+    }
+
+    public static void chipotleBuilder(){
         Random rand = new Random();
         int riceRand, meatRand,beansRand,veggiesRand,cheeseRand,quesoRand,sourCreamRand,salsaRand,guacRand;
 
@@ -20,6 +25,7 @@ public class Chipotle {
 
         for(int i = 1; i < 26; i++) {
             ArrayList<String> chipotles = new ArrayList<String>();
+
             double price = 3.00;
 
             riceRand = rand.nextInt(4);
@@ -91,18 +97,22 @@ public class Chipotle {
                 price += 0.50;
             }
 
-            StringBuffer finalChipotle = new StringBuffer();
+            StringBuilder finalChipotle = new StringBuilder();
 
 
-            for (String s : chipotles) {
-                finalChipotle.append(s);
-                finalChipotle.append(", ");
-            }
-            System.out.println("Burrito " + i + ": " +  finalChipotle + "$"+ price);
+           String prefix = "";
+           for (String s : chipotles) {
+            finalChipotle.append(prefix);
+            prefix = ", ";
+            finalChipotle.append(s);
+            //finalChipotle.append(", ");
+           }
+
+
+            System.out.println("Burrito " + i + ": " +  finalChipotle + "     "+ "$"+ price);
             System.out.println();
 
         }
-
 
     }
 }
